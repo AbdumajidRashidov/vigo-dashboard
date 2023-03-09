@@ -1,0 +1,21 @@
+.short-questions {
+	width: 90%;
+
+	&__order {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 40px;
+		height: 40px;
+		margin-right: 16px;
+
+		font-size: 18px;
+		font-weight: 600;
+		color: var(--txt-primary);
+
+		background: #fff;
+		border: 1px solid var(--stroke-input);
+		border-radius: 100%;
+	}
+}

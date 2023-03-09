@@ -1,0 +1,219 @@
+.table__heading{
+    color: var(--brand-blue) !important;
+}
+.order-card{
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    img{
+        height: 150px;
+        border-top-left-radius:12px ;
+        border-top-right-radius:12px ;
+        object-fit: cover;
+    }
+    &_body{
+        padding: 16px;
+        p{
+            color: var(--brand-blue);
+        }
+    }
+    &:hover{
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;
+    }
+}
+.food-modal{
+	&__header{
+		display: flex;
+		.icons{
+			top: 25px;
+			right: 25px;
+			position: absolute;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			svg{
+				width: 24px;
+				height: 23px;
+			}
+		}
+	}
+	&__img{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	&__title{
+		font-weight: 600;
+		font-size: 28px;
+		line-height: 42px;
+		color: #000000;
+		margin-bottom: 4px;
+	}
+	&__desc{
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 27px;
+		color: #868686;
+		margin-bottom: 14px;
+		padding-bottom: 14px;
+		border-bottom: 1px solid #eeeeee;
+	}
+	&__type{
+		padding-bottom: 20px;
+		border-bottom: 1px solid #eeeeee;
+		margin-bottom: 30px;
+		h4{
+			font-weight: 600;
+			font-size: 20px;
+			line-height: 30px;
+			color: #222222;
+			margin-bottom: 11px;
+		}
+		div{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			.control__text{
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 130%;
+				display: flex;
+				align-items: center;
+				color: #000000;
+			}
+			span{
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 130%;
+				display: flex;
+				align-items: center;
+				color: #000000;
+			}
+		}
+	}
+	&__ingridients{
+		margin-bottom: 20px;
+		h4{
+			font-weight: 600;
+			font-size: 20px;
+			line-height: 30px;
+			color: #222222;
+			margin-bottom: 11px;
+		}
+		div{
+			display: flex; 
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 10px;
+			.control__text{
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 130%;
+				display: flex;
+				align-items: center;
+				color: #000000;
+			}
+		}
+	}
+	&__btns{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.add-favourite{
+			width: 166px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-right: 30px;
+		}
+		button{
+			border-radius: 12px;
+		}
+		.submit_btn{
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 22px;
+			color: #FFFFFF;
+		}
+	}
+}
+.card{
+    background-color: #fff;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.basket{
+	&__card{
+        display: flex;
+		&-header{
+			margin-bottom: 14px;
+			h4{
+				font-style: normal;
+				font-weight: 400;
+				font-size: 18px;
+				line-height: 20px;
+				color: #000000;
+			}
+			svg{
+				width: 20px;
+				height: 20px;
+			}
+			
+		}
+		.text{
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 18px;
+			color: #868686;
+			margin-bottom: 14px;
+		}
+		&-bottom{
+			.price{
+				font-style: normal;
+				font-weight: 500;
+				font-size: 18px;
+				line-height: 20px;
+				color: #000000;
+                margin-bottom: 12px;
+			}
+			.add-favourite{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 166px;
+				button{
+					border-radius: 12px;
+                    padding: 15px 20px;
+				}
+			}
+		}
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+	}
+    &__list{
+        margin-top: 20px;
+        &-item{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin: 10px 0;
+            h4{
+                margin-left: 20px;
+            }
+        }
+        .total-summ{
+            margin-top: 20px;
+            p{
+                font-size: 20px;
+            }
+            h4{
+                font-size: 20px;
+            }
+        }
+    }
+}

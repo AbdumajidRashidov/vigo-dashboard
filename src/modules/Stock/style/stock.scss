@@ -1,0 +1,50 @@
+.store-card {
+	display: flex;
+	align-items: center;
+
+	padding: 25px;
+
+	background-color: #fff;
+	border: 2px solid transparent;
+	border-radius: 8px;
+
+	transition: 0.1s ease-in-out;
+
+	& svg,
+	& img {
+		max-width: 25px;
+		max-height: 25px;
+	}
+
+	&:hover {
+		color: var(--brand-blue);
+
+		background-color: var(--light-blue);
+		border-color: var(--brand-blue);
+	}
+
+	&:hover > svg path {
+		stroke: var(--brand-blue);
+	}
+
+	&:hover &__title {
+		color: var(--brand-blue);
+	}
+
+	&__title {
+		flex: 1 1 0;
+
+		font-size: 18px;
+		line-height: 22px;
+
+		transition: 0.1s ease-in-out;
+	}
+}
+
+.product {
+	&__btn {
+		font-size: 12px;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+}

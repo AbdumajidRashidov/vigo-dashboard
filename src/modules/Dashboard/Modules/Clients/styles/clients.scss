@@ -1,0 +1,103 @@
+.card{
+    background-color: white !important;
+    width: 100%;
+    height: auto;border-radius: 12px;
+    padding: 20px;
+
+
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom:20px;
+        border-bottom: 1px solid var(--stroke-input);
+        margin-bottom: 20px;
+    }
+
+    .border-bottom{
+        border-bottom: 2px solid var(--stroke-input);
+        margin-bottom: 20px;
+    }
+
+    &__list{
+        
+        &-item{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            .version-date{
+                font-weight: 400;
+                color: var(--txt-secondary);
+            }
+            .version-name{
+                font-size: 13px;
+                .atbd-tag{
+                    background-color: var(--stroke-input);
+                    padding: 5px;
+                    border-radius: 5px;
+                    margin-right: 5px;
+                }
+                .selling-badge{
+                    background-color: var(--brand-blue);
+                    padding: 5px;
+                    border-radius: 5px;
+                    color: white;
+                }
+                .color-success{
+                    background-color: var(--primary-green);
+                }
+            }
+            .action{
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                width: 100%;
+                font-size: 14px;
+                color: var(--txt-secondary);
+                font-weight: 400;
+                transition: all 0.3s ease-in-out ;
+                svg{
+                    margin-right: 5px;
+                    width: 18px;
+                }
+            }
+            .action:hover{
+                color: var(--brand-blue);
+            }
+        }
+        .more{
+            text-align: end;
+            color: var(--brand-blue);
+            margin-left: auto;
+            cursor: pointer;
+        }
+    }
+}
+.table_user:hover{
+    color: var(--brand-blue);
+    transition: all 0.2s ease;
+
+}
+
+.tasks{
+    .task__single{
+        background-color: var(--stroke-input);
+        padding: 20px;
+        border-radius: 8px;
+    }
+    h6{
+        display: flex;
+        align-items: center;
+        svg{
+            width:16px;
+            margin-right: 5px;
+        }
+
+    }
+    .card-content{
+        p{
+            font-size: 14px;
+        }
+    }
+}
