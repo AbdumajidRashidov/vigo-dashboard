@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Container from "containers";
 import { useOverlay } from "hooks";
 import { FastField } from "formik";
+import { ReactComponent as TimeIcon } from "assets/icons/time.svg";
 
 import {
   PageHeading,
@@ -14,9 +15,11 @@ import {
   Typography,
   AppLink,
   Status,
+  Badge,
 } from "components";
 // import { AddVendorDrawer }  from "../components/VendorDrawer";
 import { OrdersFilter } from "../components/OrdersFilter";
+import { Timer } from "modules/Authorization/components/Timer";
 
 const Orders = () => {
   const [filter, setFilter] = useState({});
@@ -34,7 +37,7 @@ const Orders = () => {
       tarif: "121",
       filial: 3,
       country: "Uzbekistan",
-      status: "active",
+      status: "to'lanmagan",
       order_count: "40",
       income: "$ 1600",
       channels: ["kanal1", "kanal2"],
@@ -42,7 +45,7 @@ const Orders = () => {
       payment_type: "Naqd",
     },
     {
-      id: "#123a12",
+      id: "#123a1212",
       payment_type: "Naqd",
       first_name: "Falonchi",
       last_name: "Falonchiyev",
@@ -82,20 +85,52 @@ const Orders = () => {
         deleteAction={() => {}}
         columns={[
           {
-            title: "Sotib oluvchi FIO",
+            title: "No",
+            dataKey: "no",
+            render: (value) => "1",
+          },
+          {
+            title: "ID (timer)",
+            dataKey: "id",
+            render: (value) => (
+              <div
+                style={{ width: "100px" }}
+                className="d-flex justify-content-between flex-column"
+              >
+                <Typography
+                  Type="p"
+                  className="mb_10 "
+                  style={{ marginBottom: "5px" }}
+                  text={value}
+                />
+                <div className="timer d-flex align-items-center">
+                  <TimeIcon className="mr_5" />
+                  <Typography Type="p" text="2:02:00" />
+                </div>
+              </div>
+            ),
+          },
+          {
+            title: "Mijoz (FIO)",
             dataKey: "name",
             render: (value) => (
               <div style={{ width: "180px" }}>
                 <AppLink
-                  link={`/orders/${value}`}
+                  link={`/dashboard/order/${value}`}
                   className="d-flex table_user align-items-center justify-content-between"
                 >
                   <div>
                     <Typography
                       Type="p"
-                      className="table__heading"
+                      className="table__heading mb_10"
                       style={{ marginBottom: "5px" }}
                       text={value}
+                    />
+                    <Typography
+                      Type="p"
+                      className="tel"
+                      style={{ marginBottom: "5px" }}
+                      text={"+998916469095"}
                     />
                   </div>
                 </AppLink>
@@ -103,41 +138,72 @@ const Orders = () => {
             ),
           },
           {
-            title: "To'lov holati",
+            title: "To'lov turi/holati",
             dataKey: "status",
             className: "white-space_no-wrap",
-            render: (value) => <Status type={"warning"} message={value} />,
-          },
-          {
-            title: "To'lov turi",
-            dataKey: "payment_type",
-            render: (value) => value,
-          },
-          {
-            title: "Buyurtma holati",
-            dataKey: "status",
-            render: (value) => <Status type={"success"} message={value} />,
+            render: (value) => (
+              <div>
+                <Typography Type="p" className="mb_10" text="Naqd pul" />
+                <Status type={"warning"} message={value} />
+              </div>
+            ),
           },
           {
             title: "Summasi",
             dataKey: "income",
-            render: (value) => <p>{value}</p>,
+            render: (value) => (
+              <div style={{ width: "150px" }}>
+                <p className="mb_10">{value}</p>
+                <Badge text={`0% - ${value}`} design="primary" />
+              </div>
+            ),
           },
           {
-            title: "Kanal",
-            dataKey: "channels",
-            render: (value) =>
-              value.map((val) => <span className=" ml_10">{val}</span>),
-          },
-          {
-            title: "Buyurtma vaqti",
+            title: "Qabul qilingan",
             dataKey: "time",
-            render: (value) => "20.20.2020",
+            render: (value) => (
+              <div style={{ width: "180px" }}>
+                <Typography
+                  Type="p"
+                  className="mb_10"
+                  text="05.03.2023 12:03"
+                />
+                <div className="timer d-flex align-items-center">
+                  <TimeIcon className="mr_10" />
+                  <Typography Type="p" text="2:02:00" />
+                </div>
+              </div>
+            ),
           },
           {
-            title: "Buyurtma turi",
+            title: "Buyurtma turi/holati",
+            dataKey: "type",
+            render: (value) => (
+              <div style={{ width: "180px" }}>
+                <Typography text="Yetkazib berish" className="mb_10" Type="p" />
+                <Badge text="Kuryerga biriktirildi" design="primary" />
+              </div>
+            ),
+          },
+          {
+            title: "Qabul qiluvchi",
             dataKey: "id",
-            render: (value) => "dostavka",
+            render: (value) => (
+              <div style={{ width: "180px" }}>
+                <Typography text="Anvar Hoshimov" className="mb_10" Type="p" />
+                <Badge text="Kuryer" design="primary" />
+              </div>
+            ),
+          },
+          {
+            title: "Kanal/vaqti",
+            dataKey: "channel",
+            render: (value) => (
+              <div style={{ width: "180px" }}>
+                <Typography text="Telegram bot" className="mb_10" Type="p" />
+                <Typography Type="p" text="2:02:00" />
+              </div>
+            ),
           },
         ]}
         items={data}

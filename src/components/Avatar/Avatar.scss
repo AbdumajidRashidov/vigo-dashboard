@@ -4,10 +4,17 @@
 	border-style: solid;
 	border-width: 3px;
 	border-radius: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	&_sm {
 		width: 44px;
 		height: 44px;
+	}
+	&_md {
+		width: 84px;
+		height: 84px;
 	}
 
 	&-border_white {
@@ -17,11 +24,14 @@
 	&-border_grey {
 		border-color: var(--stroke-input);
 	}
+	&-border_blue {
+		border-color: var(--brand-blue);
+	}
 
 	&__img {
 		width: 100%;
 		height: 100%;
-
+		border-radius: 50%;
 		object-fit: cover;
 	}
 }

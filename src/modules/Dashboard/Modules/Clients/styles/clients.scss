@@ -101,3 +101,12 @@
         }
     }
 }
+.add-address{
+    color: var(--txt-secondary);
+    &:hover{
+        color: var(--brand-blue);
+    }
+}
+.address-title{
+    color: var(--txt-secondary);
+}

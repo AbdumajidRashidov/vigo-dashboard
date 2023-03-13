@@ -8,6 +8,7 @@ const Categories = lazy(() => import("./Modules/Settings/pages/Categories"));
 const Clients = lazy(() => import("./Modules/Clients/pages/Clients"));
 const ClientSingle = lazy(() => import("./Modules/Clients/pages/ClientSingle"));
 const Orders = lazy(() => import("./Modules/Orders/pages/Orders"));
+const OrdersDetail = lazy(() => import("./Modules/Orders/pages/OrdersDetail"));
 const AddOrders = lazy(() => import("./Modules/Orders/pages/AddOrders"));
 const Menu = lazy(() => import("./Modules/Menu/pages/Menu"));
 const Notifications = lazy(() =>
@@ -38,6 +39,9 @@ const OrdersReasons = lazy(() =>
 );
 const Vacancies = lazy(() => import("./Modules/Settings/pages/Vacancies"));
 const Pages = lazy(() => import("./Modules/Settings/pages/Pages"));
+const HallAndTable = lazy(() =>
+  import("./Modules/Settings/pages/HallAndTable")
+);
 const JowiIntegration = lazy(() =>
   import("./Modules/Settings/pages/JowiIntegration")
 );
@@ -76,6 +80,10 @@ export const DashboardRoutes = [
   {
     path: "/dashboard/orders",
     element: <Orders></Orders>,
+  },
+  {
+    path: "/dashboard/order/:name",
+    element: <OrdersDetail></OrdersDetail>,
   },
   {
     path: "/dashboard/orders-add",
@@ -156,5 +164,9 @@ export const DashboardRoutes = [
   {
     path: "/dashboard/comments",
     element: <Comments></Comments>,
+  },
+  {
+    path: "/dashboard/hallandtable",
+    element: <HallAndTable></HallAndTable>,
   },
 ];

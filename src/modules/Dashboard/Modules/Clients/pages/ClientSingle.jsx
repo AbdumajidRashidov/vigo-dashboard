@@ -12,6 +12,7 @@ import SMSTab from "../components/SMSTab";
 import HistoryTab from "../components/HistoryTab";
 import { SMSDrawer } from "../components/Modals/SMSDrawer";
 import { PhoneModal } from "../components/Modals/PhoneModal";
+import { AddressModal } from "../components/Modals/AddressModal";
 
 const ClientSingle = () => {
   const { name } = useParams();
@@ -25,6 +26,10 @@ const ClientSingle = () => {
     uniqueName: "phoneModal",
     onClose: () => setIsUpdate(false),
   });
+  const addressModal = useOverlay({
+    uniqueName: "addressModal",
+    onClose: () => setIsUpdate(false),
+  });
 
   return (
     <>
@@ -33,6 +38,13 @@ const ClientSingle = () => {
         handleModalClose={SMSmodal.handleOverlayClose}
         onSuccess={() => {
           SMSmodal.handleOverlayClose();
+        }}
+      />
+      <AddressModal
+        isOpen={addressModal.isOverlayOpen}
+        handleModalClose={addressModal.handleOverlayClose}
+        onSuccess={() => {
+          addressModal.handleOverlayClose();
         }}
       />
       <PhoneModal
@@ -190,7 +202,9 @@ const ClientSingle = () => {
                 </ul>
                 <ul className="card__list">
                   <li className="card__list-item">
-                    <span className="version-date">Tezkor xizmatlar</span>
+                    <span className="version-date fw_600">
+                      Tezkor xizmatlar
+                    </span>
                   </li>
 
                   <li className="card__list-item">
@@ -274,47 +288,33 @@ const ClientSingle = () => {
                   </li>
                 </ul>
                 <ul className="atbd-menu menu-top menu-vertical w-100 ">
-                  <li className="w-100 mb-2 mt-3">
-                    <span className="version-date text-dark fw-bold">
-                      Manzillar
-                    </span>
+                  <li className="action mb_10">
+                    <span className="address-title fw_600">Manzillar</span>
                   </li>
-                  <li className="atbd-menu__item has-submenu">
-                    <a className="atbd-menu__link active three-point" href="#">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        className="feather feather-plus-square"
-                      >
-                        <rect
-                          x="3"
-                          y="3"
-                          width="18"
-                          height="18"
-                          rx="2"
-                          ry="2"
-                        />
-                        <line x1="12" y1="8" x2="12" y2="16" />
-                        <line x1="8" y1="12" x2="16" y2="12" />
-                      </svg>
-                      <span
-                        className="atbd-menu__text"
-                        data-toggle="modal"
-                        data-target="#modal-basic4"
-                      >
-                        Manzil qo'shish
-                      </span>
-                    </a>
+                  <li
+                    className="d-flex add-address align-items-center cursor_pointer mb_20"
+                    onClick={addressModal.handleOverlayOpen}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="feather feather-plus-square"
+                    >
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                      <line x1="12" y1="8" x2="12" y2="16" />
+                      <line x1="8" y1="12" x2="16" y2="12" />
+                    </svg>
+                    <span className="ml_10">Manzil qo'shish</span>
                   </li>
-                  <li className="atbd-menu__item has-submenu">
-                    <a className="atbd-menu__link active three-point" href="#">
+                  <li className="card__list-item ">
+                    <a className="version-date active three-point">
                       #1{" "}
                       <span className="atbd-menu__text">
                         Toshkent, Chilonzor Lorem ipsum dolor sit, amet
@@ -324,8 +324,8 @@ const ClientSingle = () => {
                       </span>
                     </a>
                   </li>
-                  <li className="atbd-menu__item has-submenu">
-                    <a className="atbd-menu__link active three-point" href="#">
+                  <li className="card__list-item has-submenu">
+                    <a className="version-date active three-point">
                       #2
                       <span
                         className="atbd-menu__text "
@@ -337,8 +337,8 @@ const ClientSingle = () => {
                       </span>
                     </a>
                   </li>
-                  <li className="atbd-menu__item has-submenu">
-                    <a className="atbd-menu__link active three-point" href="#">
+                  <li className="card__list-item  has-submenu">
+                    <a className="version-date active three-point">
                       #3
                       <span
                         className="atbd-menu__text"

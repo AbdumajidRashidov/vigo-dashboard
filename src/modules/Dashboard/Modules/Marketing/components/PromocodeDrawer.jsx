@@ -30,7 +30,7 @@ export const AddPromocodeDrawer = ({
         fields={[
           {
             name: "type",
-            validations: [{ type: "required" }],
+            // validations: [{ type: "required" }],
             value: (value) => value,
           },
         ]}
@@ -43,6 +43,14 @@ export const AddPromocodeDrawer = ({
               </div>
               <div className="col-12">
                 <FastField
+                  name="name"
+                  component={Fields.InputText}
+                  label="Nomini kiriting"
+                  placehorder="Nomini kiriting"
+                />
+              </div>
+              <div className="col-6">
+                <FastField
                   name="promo_type"
                   component={Fields.Select}
                   label="Promokod turini tanlang"
@@ -54,7 +62,7 @@ export const AddPromocodeDrawer = ({
                   ]}
                 />
               </div>
-              <div className="col-12">
+              <div className="col-6">
                 <FastField
                   name="type"
                   component={Fields.Select}
@@ -66,15 +74,17 @@ export const AddPromocodeDrawer = ({
                   ]}
                 />
               </div>
-                <div className="col-12">
+              <div className="col-6">
                 <FastField
                   name="persent"
                   component={Fields.InputNumber}
                   label="Chegirma qiymati"
                   placehorder="Chegirma qiymati"
+                  max="100"
+                  min="0"
                 />
               </div>
-              <div className="col-12">
+              <div className="col-6">
                 <FastField
                   name="maximun"
                   component={Fields.InputNumber}
@@ -82,7 +92,7 @@ export const AddPromocodeDrawer = ({
                   placehorder="Maksimal chegirma summasi"
                 />
               </div>
-              <div className="col-12">
+              <div className="col-6">
                 <FastField
                   name="minimum"
                   component={Fields.InputNumber}
@@ -90,16 +100,8 @@ export const AddPromocodeDrawer = ({
                   placehorder="Maksimal buyurtma summasi"
                 />
               </div>
-              <div className="col-12">
-                  <FastField
-                    name="name"
-                    component={Fields.InputText}
-                    label="Nomini kiriting"
-                    placehorder="Nomini kiriting"
-                  />
-                </div>
-              
-              <div className="col-12">
+
+              <div className="col-6">
                 <FastField
                   name="limit"
                   component={Fields.InputText}
@@ -107,7 +109,7 @@ export const AddPromocodeDrawer = ({
                   placehorder="Foydalanish soni"
                 />
               </div>
-              <div className="col-12">
+              <div className="col-6">
                 <FastField
                   name="start_date"
                   component={Fields.DatePicker}
@@ -116,7 +118,7 @@ export const AddPromocodeDrawer = ({
                   prepend={""}
                 />
               </div>
-              <div className="col-12">
+              <div className="col-6">
                 <FastField
                   name="end_date"
                   component={Fields.DatePicker}

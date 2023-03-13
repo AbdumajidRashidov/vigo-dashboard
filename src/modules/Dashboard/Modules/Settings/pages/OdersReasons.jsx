@@ -3,13 +3,13 @@ import { get } from "lodash";
 
 import { useOverlay } from "hooks";
 
-import { PageHeading, TabBase, Table,Status } from "components";
+import { PageHeading, TabBase, Table, Status, Button } from "components";
 import { AddOrdersReasonModal } from "../components/Modals/AddOrderReason";
 
 const OrdersReasons = () => {
   const [tabType, setTabType] = useState("Buyurtmani bekor qilish");
   const modal = useOverlay({
-    uniqueName: "addVendorModal",
+    uniqueName: "addOrderReasonModal",
     onClose: () => setIsUpdate(false),
   });
 
@@ -25,7 +25,7 @@ const OrdersReasons = () => {
       status: "active",
       address: "Buxoro shahar",
       manager: "John Doe",
-      time:"12.02.2022 | 12:00"
+      time: "12.02.2022 | 12:00",
     },
   ];
 
@@ -34,20 +34,17 @@ const OrdersReasons = () => {
       <AddOrdersReasonModal
         isOpen={modal.isOverlayOpen}
         handleModalClose={modal.handleOverlayClose}
+        title={tabType}
         onSuccess={() => {
           modal.handleOverlayClose();
         }}
       />
-
       <PageHeading
         links={[
           { link: "/dashboard", label: "Asosiy" },
           { label: "Buyurtma sabablari" },
         ]}
         title="Buyurtma sabablari"
-        btnText="+ Qo'shish"
-        mainAction={modal.handleOverlayOpen}
-        // statistics={adapters.debtorAdapter(debtorStatistics.data)}
       />
       <div className="row">
         <div className="col-5">
@@ -58,13 +55,20 @@ const OrdersReasons = () => {
             onPaneChange={(active, event) => setTabType(active)}
           />
         </div>
+        <div className="col-7 d-flex align-items-center justify-content-end mb_30">
+          <Button
+            onClick={modal.handleOverlayOpen}
+            text={"Qo'shish"}
+            className="btn"
+            design="primary"
+          />
+        </div>
       </div>
 
       <Table
         emptyUiText="Hozirgi vaqtda hech qanday buyurtmalar yo'q"
-        // isLoading={debtorList.isLoading}
-        editAction={()=>{}}
-        deleteAction={()=>{}}
+        editAction={() => {}}
+        deleteAction={() => {}}
         columns={[
           {
             title: "ID",
@@ -77,13 +81,13 @@ const OrdersReasons = () => {
             dataKey: "name",
             render: (value) => value,
           },
-          
+
           {
             title: "Vaqti",
             dataKey: "time",
             render: (value) => value,
           },
-        
+
           {
             title: "Status",
             dataKey: "status",

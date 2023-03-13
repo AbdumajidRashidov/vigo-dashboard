@@ -29,17 +29,7 @@ const Comments = () => {
       status: "active",
       address: "Buxoro",
       manager: "John Doe",
-      type: [
-        "Umumiy",
-        "Buyurtma yetkazib berish",
-        "Buyurtma olib kelish",
-        "Buyurtma stol",
-        "Kuryer",
-        "Umumiy sayt",
-        "Umumiy bot",
-        "Umumiy QR",
-        "Xodim",
-      ],
+      type: "Buyurtma olib kelish",
       grade: "5",
       time: "12.02.2022 | 12:00",
     },
@@ -109,14 +99,11 @@ const Comments = () => {
           {
             title: "Turi",
             dataKey: "type",
-            render: (values) =>
-              values.map((value) => {
-                return (
-                  <p className="mb_20">
-                    <Badge text={value} design="primary" />
-                  </p>
-                );
-              }),
+            render: (value) => (
+              <p className="mb_20">
+                <Badge text={value} design="primary" />
+              </p>
+            ),
           },
           {
             title: "Baho",

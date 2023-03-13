@@ -1,10 +1,10 @@
 import React from "react";
 import { FastField } from "formik";
-import "../styles/settings.scss"
+import "../styles/settings.scss";
 
 import Containers from "containers";
 
-import { PageHeading, Typography, Table, Fields,Button } from "components";
+import { PageHeading, Typography, Table, Fields, Button } from "components";
 
 const Billing = () => {
   const data = [
@@ -76,99 +76,99 @@ const Billing = () => {
           />
         </div>
         <div className="col-4">
-            <div className="card mb_20 bg-success">
-                <Typography Type="h3" text="Balans : 300 000 so'm" />
-                <Typography Type="p" text="Amal qilish muddati : 30 kun" />
-            </div>
-            <div className="card">
-          <Containers.Form
-            url="/user/sign-in"
-            params={{
-              include: "userDetail,userDetail.avatar,position",
-            }}
-            className="row g-3"
-            onSuccess={(user) => {
-              // dispatch(auth.success("token"));
-              // storage.set("token","token");
-              // navigate("/");
-            }}
-            fields={[
-              {
-                name: "name",
-                validations: [{ type: "required" }],
-              },
-              {
-                name: "constant",
-                validations: [{ type: "required" }],
-              },
-              {
-                name: "working_contact",
-                validations: [{ type: "required" }],
-              },
-            ]}
-          >
-            {({ isSubmitting, values, setFieldValue }) => (
-              <>
-                <div className="col-12 mb_20">
-                  <Typography Type="h3" text="To'lov qilish" />
-                </div>
-                
-                    <div className="col-12">
-                      <FastField
-                        name="user_id"
-                        component={Fields.Select}
-                        placeholder="Tarifni tanlang"
-                      />
-                    </div>
-                    <div className="col-12">
-                      <FastField
-                        name="user_id"
-                        component={Fields.Select}
-                        placeholder="Davrni tanlang"
-                      />
-                    </div>
-                    <div className="col-12">
-                      <FastField
-                        name="merchand_id"
-                        component={Fields.Textarea}
-                        size={"textarea"}
-                        placeholder="Izoh..."
-                      />
-                    </div>
-                    <div className="col-4">
-                      <FastField
-                        name="kasdasey"
-                        component={Fields.RadioButton}
-                        label="Click"
-                      />
-                    </div>
-                    <div className="col-4">
-                      <FastField
-                        name="kasdasey"
-                        component={Fields.RadioButton}
-                        label="Payme"
-                      />
-                    </div>
-                    <div className="col-4">
-                      <FastField
-                        name="kasdasey"
-                        component={Fields.RadioButton}
-                        label="Payze"
-                      />
-                    </div>
-                <div className="col-6 mb_15">
-                  <Button
-                    className="btn w_full"
-                    design="primary"
-                    type="submit"
-                    text="Saqlash"
-                    isLoading={isSubmitting}
-                  />
-                </div>
-              </>
-            )}
-          </Containers.Form>
-        </div>
+          <div className="card mb_20 bg-success">
+            <Typography Type="h3" text="Balans : 300 000 so'm" />
+            <Typography Type="p" text="Amal qilish muddati : 30 kun" />
+          </div>
+          <div className="card">
+            <Containers.Form
+              url="/user/sign-in"
+              params={{
+                include: "userDetail,userDetail.avatar,position",
+              }}
+              className="row g-3"
+              onSuccess={(user) => {
+                // dispatch(auth.success("token"));
+                // storage.set("token","token");
+                // navigate("/");
+              }}
+              fields={[
+                {
+                  name: "name",
+                  validations: [{ type: "required" }],
+                },
+                {
+                  name: "constant",
+                  validations: [{ type: "required" }],
+                },
+                {
+                  name: "working_contact",
+                  validations: [{ type: "required" }],
+                },
+              ]}
+            >
+              {({ isSubmitting, values, setFieldValue }) => (
+                <>
+                  <div className="col-12 mb_20">
+                    <Typography Type="h3" text="To'lov qilish" />
+                  </div>
+
+                  <div className="col-12">
+                    <FastField
+                      name="user_id"
+                      component={Fields.Select}
+                      placeholder="Tarifni tanlang"
+                    />
+                  </div>
+                  <div className="col-12">
+                    <FastField
+                      name="user_id"
+                      component={Fields.Select}
+                      placeholder="Davrni tanlang"
+                    />
+                  </div>
+                  <div className="col-12">
+                    <FastField
+                      name="merchand_id"
+                      component={Fields.Textarea}
+                      size={"textarea"}
+                      placeholder="Izoh..."
+                    />
+                  </div>
+                  <div className="col-4">
+                    <FastField
+                      name="kasdasey"
+                      component={Fields.RadioButton}
+                      label="Click"
+                    />
+                  </div>
+                  <div className="col-4">
+                    <FastField
+                      name="kasdasey"
+                      component={Fields.RadioButton}
+                      label="Payme"
+                    />
+                  </div>
+                  <div className="col-4">
+                    <FastField
+                      name="kasdasey"
+                      component={Fields.RadioButton}
+                      label="Payze"
+                    />
+                  </div>
+                  <div className="col-12 mb_15">
+                    <Button
+                      className="btn w_full"
+                      design="primary"
+                      type="submit"
+                      text="Saqlash"
+                      isLoading={isSubmitting}
+                    />
+                  </div>
+                </>
+              )}
+            </Containers.Form>
+          </div>
         </div>
       </div>
 

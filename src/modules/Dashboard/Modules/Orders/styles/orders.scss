@@ -217,3 +217,43 @@
         }
     }
 }
+.payment{
+    margin-top: 50px;
+    border: 1px solid #868686;
+    padding: 10px;
+    ul{
+		width: 100%;
+        li{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            p{
+                margin-left: 5px;
+                &:nth-child(even){
+                    font-size: 16px;
+                    font-weight: 600;
+
+                }
+                &:nth-child(odd){
+                    font-size: 16px;
+                }
+            }
+            
+            &:last-child{
+                margin-top: 20px;
+                p{
+                    margin-left: 3px;
+                    &:nth-child(even){
+                        font-size: 18px;
+                        color: var(--brand-blue);
+                    }
+                }
+            }
+        }
+    }
+}
+.border-bottom{
+	border-bottom: 1px solid var(--txt-secondary);
+}
